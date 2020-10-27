@@ -3,17 +3,51 @@ alert('js is loaded')
 // IPO Input -> Process -> Output
 // Constants and State Variables (Data)
 // Constant Data
-const BASE_URL = 'https://api.thecatapi.com/v1/breeds?attach_breed=20&name=20&limit=20&origin=20'
+const BASE_URL = 'https://api.thecatapi.com/v1/categories?breed=20&images=20&name=20&origin=20' 
 // State Data
-let pokemonData, pokemonDetail;
+let kittyData, kittyDetail;
 // Cached Element References
 const $collection = $('#collection');
 // Attached Event Listeners
 $collection.on('click', 'article.card', handleClick);
+
+
 // Functions
+function getData(){
+    $.ajax(BASE_URL).then(function(data){
+      kittyData = data;
+      render();
+
+    }, function(error){
+        console.log('Error ', error);
+
+    });
+}
+
+function handleClick(){
+    alert('a card was clicked')
+}
+
+function render(){
+    const htmlArray = kittyData.results.map(kitty => {
+        return`
+        <article class=card flx-ctr>
+            <h3>Kitties${kitty.attach_breed}</h3>
+        </article>
+        `;
+    });
+    $collection.html(htmlArray);
+}
+
 // called immediately
-init();
-function init() {
+//init();
+
+
+
+
+
+
+/*function init() {
     getData();
 }
 function getData(detailURL) {
@@ -33,11 +67,11 @@ function getData(detailURL) {
         // call render to visualize it to the DOM
         // we are getting all the pokemon
         if(detailURL === undefined) {
-            pokemonData = data;
+            kittyData = data;
             render();
         } else {
             // we are getting a single pokemon object
-            pokemonDetail = data;
+            kittyDetail = data;
             // call render and tell the function that it needs to display a modal
             render(true);
         }
@@ -46,7 +80,8 @@ function getData(detailURL) {
     });
 }
 function handleClick() {
-    getData(this.dataset.url);
+  alert('a card was clicked')
+    //getData(this.dataset.url);
 }
 function render(showModal) {
     if(showModal === true) {
@@ -54,20 +89,20 @@ function render(showModal) {
         // generate the html for the inner content for the modal
         // call the modal on the modal element
         const $modalContent = $(`
-            <img src="${pokemonDetail.sprites.front_default}"/>
-            <h5>${pokemonDetail.name}</h5>
-            <p>Breed: ${pokemonDetail.height}</p>
-            <p>Name: ${pokemonDetail.moves.length}</p>
-            <p>Origin ${pokemonDetail.abilities.length}</p>
+            <img src="${https://api.thecatapi.com/v1/images/search}"/>
+            <h5>${kittyDetail.breed}</h5>
+            <p>Name: ${kittyDetail.name.length}</p>
+            <p>Origin ${kittyDetail.origin.length}</p>
+
         `);
-        const $modal = $('#catmodal');
+        const $modal = $('#kittymodal');
         $modal.html($modalContent)
         $modal.modal();
     } else {
-        // map over the objects inside of the pokemonData results array
+        // map over the objects inside of the kittyData results array
         // dynamically generate html for each element in the array
         // add that html to our collection element
-        const htmlArray = pokemonData.results.map(pokemon => {
+        const htmlArray = kittyData.results.map(pokemon => {
             return`
             <article data-url="${pokemon.url}" class="card flex-ctr">
                 <h3>${pokemon.name}</h3>
@@ -76,4 +111,6 @@ function render(showModal) {
         });
         $collection.html(htmlArray);
     }
-}
+} 
+
+*/
