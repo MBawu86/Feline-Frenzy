@@ -6,7 +6,7 @@
     --primary-brand-color: rgb(0, 0, 255); 
     --secondary-brand-color: pink;
     --accent-color: gold;
-    --shadow-gray-dark: green;
+    --shadow-gray-dark: rgb(233, 83, 108);
     --logo-font: 'Dancing Script', Cursive;
 
 }
@@ -39,7 +39,7 @@ header, footer{
 header{
     padding-left: 10px;
     font-family: var(--logo-font);
-    box-shadow: 1px 1px 1px 12 5px var(--shadow-gray-dark)
+    box-shadow: 1px 1px 1px 10px var(--shadow-gray-dark)
 }
 
 header > h1 {
@@ -60,9 +60,9 @@ main{
     height: 150px;
     background-color: rgb(135, 135, 235);
     border-radius:20px;
-    /*need to add spacing between cards*/
+    padding: 50px;
     margin: 10px;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     justify-content: center;
     text-transform: capitalize;
