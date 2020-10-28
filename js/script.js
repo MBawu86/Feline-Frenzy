@@ -75,7 +75,7 @@ function render(showModal){
         <img src="${kittyDetail.image_url}"
     style="width: 430px;"/>
         <h1>${kittyDetail.name}</h1>
-        <p>Kid Friendly: ${kittyDetail.child_friendly}</p>
+        <p>Kid Friendly: ${kittyDetail.child_friendly}/5</p>
         <p>Origin: ${kittyDetail.origin} </p>
         <p>Personality: ${kittyDetail.description} </p>
         `);
@@ -90,8 +90,9 @@ function render(showModal){
     const htmlArray = kittyData.map(kitty => {
         return`
         <article data-id="${kitty.id}" data-name="${kitty.name}" data-child_friendly="${kitty.child_friendly}" data-origin="${kitty.origin}" data-description="${kitty.description}" class=card flx-ctr>
-
-            <h3>😻</h3>
+            <h5>${kitty.name}</h5>
+            <br>
+            <h2>😻</h2>
         </article>
         `;
     });

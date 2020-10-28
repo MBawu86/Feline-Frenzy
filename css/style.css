@@ -6,7 +6,7 @@
     --primary-brand-color: rgb(0, 0, 255); 
     --secondary-brand-color: pink;
     --accent-color: gold;
-    --shadow-gray-dark: rgb(233, 83, 108);
+    --shadow-pink-dark: rgb(233, 83, 108);
     --logo-font: 'Dancing Script', Cursive;
 
 }
@@ -22,7 +22,6 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     min-height: 100vh;
-    background: rgb(103,58,180);
     background: linear-gradient(90deg, rgba(103,58,180,1) 0%, rgba(71,253,29,1) 50%, rgba(252,250,69,1) 100%);
 
 }
@@ -39,12 +38,12 @@ header, footer{
 header{
     padding-left: 10px;
     font-family: var(--logo-font);
-    box-shadow: 1px 1px 1px 10px var(--shadow-gray-dark)
+    box-shadow: 1px 1px 10px 10px var(--shadow-pink-dark)
 }
 
 header > h1 {
     color: var(--accent-color);
-    text-shadow: 1px 1px 3px var(--secondary-brand-color);
+    text-shadow: 1px 1px 10px 20px var(--secondary-brand-color);
 }
 
 footer{
@@ -60,9 +59,10 @@ main{
     height: 150px;
     background-color: rgb(135, 135, 235);
     border-radius:20px;
-    padding: 50px;
+    padding: 25px;
     margin: 10px;
-    font-size: 35px;
+    font-size: 25px;
+    
     text-align: center;
     justify-content: center;
     text-transform: capitalize;
