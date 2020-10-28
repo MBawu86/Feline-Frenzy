@@ -3,7 +3,7 @@
 // IPO Input -> Process -> Output
 // Constants and State Variables (Data)
 // Constant Data
-const BASE_URL = 'https://api.thecatapi.com/v1/breeds?api_key=3018d430-211b-419d-b944-5187ca34f37a'
+const BASE_URL = 'https://api.thecatapi.com/v1/categories?api_key=3018d430-211b-419d-b944-5187ca34f37a'
  
 /*GET /api.thecatapi.com/v1/breeds?
 
