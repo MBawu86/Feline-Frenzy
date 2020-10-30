@@ -1,3 +1,6 @@
+## Feline Frenzy
+This is a simple app that displays information about cats 
+
 ## Technologies Used
 - HTML5
 - CSS3
